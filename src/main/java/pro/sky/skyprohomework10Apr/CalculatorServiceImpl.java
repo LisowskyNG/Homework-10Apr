@@ -10,43 +10,43 @@ public class CalculatorServiceImpl implements CalculatorService {
     }
 
     public String plusTask2(Integer num1, Integer num2) {
-        if (num1 == null || num2 == null) {
+        if (nullChecking(num1, num2)) {
             return "Параметры не заданы ";
         } else {
-            int plus = num1 + num2;
-            return num1 + " + " + num2 + " = " + plus;
+            return num1 + " + " + num2 + " = " +(num1 + num2);
         }
-
     }
 
     public String minusTask3(Integer num1, Integer num2) {
-        if (num1 == null || num2 == null) {
+        if (nullChecking(num1, num2)) {
             return "Параметры не заданы ";
         } else {
-            int minus = num1 - num2;
-            return num1 + " - " + num2 + " = " + minus;
+            return num1 + " - " + num2 + " = " +(num1 - num2);
         }
     }
 
     public String multiplyTask4(Integer num1, Integer num2) {
-        if (num1 == null || num2 == null) {
+        if (nullChecking(num1, num2)) {
             return "Параметры не заданы ";
         } else {
-            int multiply = num1 * num2;
-            return num1 + " * " + num2 + " = " + multiply;
+            return num1 + " * " + num2 + " = " +(num1 * num2);
         }
     }
 
     public String divideTask5(Integer num1, Integer num2) {
 
-        if(num1 == null || num2 == null) {
+        if(nullChecking(num1, num2)) {
             return "Параметры не заданы ";
         } else if (num2 == 0) {
             return "Делить на ноль нельзя";
         } else {
-            int divide = num1 / num2;
-            return num1 + " / " + num2 + " = " + divide;
+            return num1 + " / " + num2 + " = " +(num1 / num2);
         }
     }
 
+    public boolean nullChecking(Integer num1, Integer num2) {
+        boolean nullChecking;
+        nullChecking = num1 == null || num2 == null;
+        return nullChecking;
+    }
 }

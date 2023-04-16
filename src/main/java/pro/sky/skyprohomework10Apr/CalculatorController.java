@@ -17,7 +17,6 @@ public class CalculatorController {
         return calculatorService.answerCalculator();
     }
 
-
     @GetMapping(path = "/calculator/plus")
     public String summTask2(@RequestParam(required = false) Integer num1, @RequestParam(required = false) Integer num2) {
         return calculatorService.plusTask2(num1, num2);
